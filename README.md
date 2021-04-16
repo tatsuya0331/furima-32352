@@ -5,11 +5,13 @@
 | Column             | Type   | Options                        |
 | --------           | ------ | ------------------------------ |
 | nickname           | string | null: false                    |
-| email              | string | null: false, foreign_key: true |
+| email              | string | null: false, unique: true      |
 | encrypted_password | string | null: false                    |
 | last_name          | string | null: false                    |
 | first_name         | string | null: false                    |
-
+| last_ruby          | string | null: false                    |
+| first_ruby         | string | null: false                    |
+| birthday           | string | null: false                    |
 ### Association
 
 - has_many :purchases
@@ -25,21 +27,21 @@
 
 - belongs_to :user
 - belongs_to :item
+- has_one :residence
 
 ## items テーブル　（商品情報）
 
-| Column       | Type       | Options                        |
-| ------------ | ---------- | ------------------------------ |
-| image        | text       | null: false                    |
-| user         | references | null: false, foreign_key: true |
-| product_name | string     | null: false                    |
-| description  | string     | null: false                    |
-| category     | string     | null: false                    |
-| status       | string     | null: false                    |
-| burden       | string     | null: false                    |
-| delivery     | string     | null: false                    |
-| days_delivery| string     | null: false                    | 
-| price        | integer    | null: false                    |
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| user             | references | null: false, foreign_key: true |
+| product_name     | string     | null: false                    |
+| description      | text       | null: false                    |
+| category_id      | integer    | null: false                    |
+| status_id        | integer    | null: false                    |
+| burden_id        | integer    | null: false                    |
+| delivery _id     | integer    | null: false                    |
+| days_delivery_id | integer    | null: false                    | 
+| price            | integer    | null: false                    |
 
 ### Association  
 
@@ -50,15 +52,12 @@
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | user          | references | null: false, foreign_key: true |
-| card          | integer    | null: false                    |
-| expiration    | integer    | null: false                    |
-| security      | integer    | null: false                    |
 | postal_code   | integer    | null: false                    |
-| prefectures   | string     | null: false                    |
+| delivery _id  | integer    | null: false                    |
 | municipality  | string     | null: false                    |
 | address       | string     | null: false                    |
 | building_name | string     |                                |
-| phone_number  | integer    | null: false                    |
+| phone_number  | string     | null: false                    |
 
 ### Association
 
