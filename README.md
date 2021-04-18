@@ -33,7 +33,7 @@
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| purchase         | references | null: false, foreign_key: true |
+| user             | references | null: false, foreign_key: true |
 | product_name     | string     | null: false                    |
 | description      | text       | null: false                    |
 | category_id      | integer    | null: false                    |
@@ -62,5 +62,4 @@
 
 ### Association
 
-- belongs_to :user
-- belongs_to :
+- belongs_to :purchase
