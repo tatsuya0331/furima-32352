@@ -44,7 +44,7 @@ en:
       signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirmation link to confirm your new email address."
       updated: "Your account has been updated successfully."
-      updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again"
+      updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again."
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
@@ -61,16 +61,5 @@ en:
       not_found: "not found"
       not_locked: "was not locked"
       not_saved:
-<<<<<<< Updated upstream
-        one: "１つのエラーがあります。修正して再度送信して下さい。:"
-        other: "%{count}のエラーがあります。修正して再度送信して下さい。"
-      taken: "は既に使用されています。"
-      blank: "が入力されていません。"
-      too_short: "は%{count}文字以上に設定して下さい。"
-      too_long: "は%{count}文字以下に設定して下さい。"
-      invalid: "は有効でありません。"
-      confirmation: "が内容とあっていません。"
-=======
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
->>>>>>> Stashed changes
