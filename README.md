@@ -1,38 +1,58 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル （ユーザー情報）
 
-Things you may want to cover:
+| Column             | Type   | Options                        |
+| --------           | ------ | ------------------------------ |
+| nickname           | string | null: false                    |
+| email              | string | null: false, unique: true      |
+| encrypted_password | string | null: false                    |
+| last_name          | string | null: false                    |
+| first_name         | string | null: false                    |
+| last_name_kana     | string | null: false                    |
+| first_name_kana    | string | null: false                    |
+| birthday           | date   | null: false                    |
+### Association
 
-* Ruby version
+- has_many :purchases
+- has_many :items
 
-<<<<<<< Updated upstream
-* System dependencies
-=======
-## purchases テーブル （購入記録）
->>>>>>> Stashed changes
 
-* Configuration
+## purchases テーブル　（購入記録）
 
-* Database creation
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
+### Association
 
-<<<<<<< Updated upstream
-* Database initialization
-=======
-## items テーブル （商品情報）
->>>>>>> Stashed changes
+- belongs_to :user
+- belongs_to :item
+- has_one :residence
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## items テーブル　（商品情報）
 
-* Deployment instructions
 
-<<<<<<< Updated upstream
-* ...
-=======
-## residences テーブル （発送先住所）
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| user             | references | null: false, foreign_key: true |
+| product_name     | string     | null: false                    |
+| description      | text       | null: false                    |
+| category_id      | integer    | null: false                    |
+| status_id        | integer    | null: false                    |
+| burden_id        | integer    | null: false                    |
+| delivery _id     | integer    | null: false                    |
+| days_delivery_id | integer    | null: false                    | 
+| price            | integer    | null: false                    |
+
+### Association  
+
+- belongs_to :user
+- has_one :purchase
+
+
+## residences テーブル　（発送先住所）
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
@@ -46,5 +66,6 @@ Things you may want to cover:
 
 ### Association
 
+
 - belongs_to :purchase
->>>>>>> Stashed changes
+
