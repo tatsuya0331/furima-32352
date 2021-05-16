@@ -17,6 +17,7 @@
 - has_many :purchases
 - has_many :items
 
+
 ## purchases テーブル　（購入記録）
 
 | Column | Type       | Options                        |
@@ -29,7 +30,9 @@
 - belongs_to :item
 - has_one :residence
 
+
 ## items テーブル　（商品情報）
+
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
@@ -48,6 +51,7 @@
 - belongs_to :user
 - has_one :purchase
 
+
 ## residences テーブル　（発送先住所）
 
 | Column        | Type       | Options                        |
@@ -62,4 +66,6 @@
 
 ### Association
 
+
 - belongs_to :purchase
+
